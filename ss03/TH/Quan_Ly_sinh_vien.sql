@@ -99,3 +99,39 @@ select S.StudentName, Sub.SubName,M.Mark
 from Student S join Mark M on S.StudentID=M.StudentID 
 join Subject Sub on M.SubID=Sub.SubID
 order by Mark DESC, StudentName ASC;
+
+-- ss04_Thuc Hanh
+select Address , count(StudentID) as 'So luong hoc vien'
+from Student
+group by Address;
+
+select S.StudentID,S.StudentName ,avg(Mark) from 
+Student S join Mark M on S.StudentID=M.StudentID
+group by StudentID,StudentName
+having avg(Mark)>15;
+
+
+select S.StudentID,S.StudentName ,avg(Mark) from 
+Student S join Mark M on S.StudentID=M.StudentID
+group by StudentID,StudentName
+having avg(Mark)>=all(select avg(Mark) from Mark group by Mark.StudentID);
+
+-- Bai tap SS04
+
+
+-- hien thi tat ca cac thong tin mon hoc co credit lon nhat
+select  *
+from Subject
+where Credit=(select max(Credit) from Subject);
+
+-- Hien thi thong tin mon hoc co diem thi cao nhat
+select Sub.SubID,Sub.SubName,Sub.Credit,Sub.Status , M.Mark from 
+Subject Sub join Mark M on 
+Sub.SubID=M.SubID
+where Mark=(select max(Mark) from Mark);
+
+
+-- Hien thi thong tin cua sinh vien  va diem trung binh cua moi sinh vien , xep hang theo thu tu giam dan
+SELECT S.StudentId,S.StudentName, AVG(Mark)
+FROM Student S join Mark M on S.StudentId = M.StudentId
+GROUP BY S.StudentId, S.StudentName
