@@ -1,0 +1,124 @@
+package Tinh;
+import java.util.*;
+public class Nhap_3_so {
+int a;
+int b;
+int c;
+int d;
+Scanner sc=new Scanner(System.in);
+void tinhPtBac1()
+{
+	System.out.println("Nhap so a:");
+	a=sc.nextInt();
+	System.out.println("Nhap so b:");
+	b=sc.nextInt();
+	System.out.println("Phuong trinh co dang tong quat:"+(b+"x"+"+"+a+"="+"0"));
+	System.out.println("nghiem cua phuong trinh:"+(-b/a));
+}
+void tinhPTBac2()
+{
+	System.out.println("Nhap so a:");
+	a=sc.nextInt();
+	System.out.println("Nhap so b:");
+	b=sc.nextInt();
+	System.out.println("Nhap so c:");
+	c=sc.nextInt();
+	System.out.println("Phuong trinh co dang tong quat:"+(b+"x^2"+"+"+a+"x"+"+"+c+"="+"0"));
+	int delta=b*b - 4*a*c;
+	int x1,x2;
+	System.out.println("Dental:"+delta);
+	if (delta > 0) {
+        x1 =  (int) ((-b + Math.sqrt(delta)) / (2*a));
+        x2 =  (int) ((-b - Math.sqrt(delta)) / (2*a));
+        System.out.println("Phương trình có 2 nghiệm là: "
+                + "x1 = " + x1 + " và x2 = " + x2);
+    } else {
+        System.out.println("Phương trình vô nghiệm!");
+    }
+	// thieu phuong trinh nghiem kep
+}
+void tinhPtBac3() {
+	System.out.println("Nhap so a:");
+	a=sc.nextInt();
+	System.out.println("Nhap so b:");
+	b=sc.nextInt();
+	System.out.println("Nhap so c:");
+	c=sc.nextInt();
+	System.out.println("Nhap so d:");
+	d=sc.nextInt();
+	int u,v,x1,x2,x3,p,q;
+	int delta=18 * a * b * c * d - 4 * b * b * b * d + b * b * c * c - 4 * a * c * c * c - 27 * a * a * d * d;
+	 p = (3 * a * c - b * b) / (3 * a * a);
+     q = (2 * b * b * b - 9 * a * b * c + 27 * a * a * d) / (27 * a * a * a);
+	if (delta > 0) {
+        u = (int) Math.cbrt((-q + Math.sqrt(delta)) / 2);
+        v = (int) Math.cbrt((-q - Math.sqrt(delta)) / 2);
+        x1 = u + v - (b / (3 * a));
+        System.out.println("Phương trình bậc 3 có nghiệm:");
+        System.out.println("x1 = " + x1);
+	} else if (delta == 0) {
+        if (p == 0) {
+            x1 = (int) Math.cbrt(-d / a);
+            x2 = x3 = -2 * x1;
+        } else {
+            x1 = 3 * q / p - (b / (3 * a));
+            x2 = -3 * q / (2 * p) - (b / (3 * a));
+            x3 = x2;
+        }
+        System.out.println("Phương trình bậc 3 có nghiệm:");
+        System.out.println("x1 = " + x1);
+        System.out.println("x2 = " + x2);
+        System.out.println("x3 = " + x3);
+	}
+	// thieu truong hop delta be hon 0
+}
+void tinhDienTichVaNhanDangHinhThang()
+{
+	  System.out.print("Nhap day lon: ");
+      double base1 = sc.nextDouble();
+
+      System.out.print("Nhap day nho: ");
+      double base2 = sc.nextDouble();
+
+      System.out.print("Nhap chieu cao: ");
+      double height = sc.nextDouble();
+      
+      System.out.print("Nhập độ dài cạnh bên: ");
+      double side = sc.nextDouble();
+      
+      double area = (base1 + base2) * height / 2;
+      System.out.println("dien tich hinh thang : " + area);
+      if (base1 == base2) {
+          if (height == Math.sqrt(side * side - Math.pow((base1 - base2) / 2, 2))) {
+              System.out.println("Đây là hình thang vuong(can)");
+          }else
+          {
+        	  System.out.println("Day la hinh thang can(vuong)");
+          }
+      }
+}
+void tinhDienTichVaNhanDangHCN()
+{
+	 System.out.print("Nhap chieu dai: ");
+     double length = sc.nextDouble();
+
+     System.out.print("Nhap chieu rong: ");
+     double width = sc.nextDouble();
+
+     double area = length * width;
+     System.out.println("Dien tich hinh chu nhat: " + area);
+
+     if (length == width) {
+         System.out.println("Hinh nay la hinh chu nhat dai(hinh vuong)");
+     } else if (length > width) {
+         System.out.println("Hinh nay la hinh vuong (hinh chu nhat dai)");
+     } else {
+         System.out.println("Hinh nay la hinh chu nhat rong");
+     }
+ }
+public static void main(String[] args) {
+	Nhap_3_so s1 =new Nhap_3_so();
+	s1.tinhPtBac1();
+//	s1.tinhPTBac2();
+}
+}
