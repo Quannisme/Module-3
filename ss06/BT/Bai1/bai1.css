@@ -1,0 +1,27 @@
+body{
+    font-family:  Verdana,sans-serif;
+    font-size: 0.9em;
+}
+header,footer{
+    color: white;
+    background-color: black;
+    padding: 60px;
+}
+section{
+    background-color: antiquewhite;   
+    padding: 50px;
+}
+article{
+    background-color: white;
+    padding:10px
+}
+ul{
+    list-style: none;
+
+}
+nav ul{
+    padding: 0%;
+}
+nav ul li{
+    display: inline;
+}

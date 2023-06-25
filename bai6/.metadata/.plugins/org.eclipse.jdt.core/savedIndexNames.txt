@@ -1,5 +1,0 @@
-INDEX VERSION 1.132+D:\bai6\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-1785366414.index
-3959137331.index
-2591095529.index

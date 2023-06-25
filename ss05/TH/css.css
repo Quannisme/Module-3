@@ -1,0 +1,13 @@
+h1{
+    color: cornflowerblue;
+    font-family: "Times New Roman";
+    font-size: 200%;
+}
+p{
+    color: aqua;
+    font-family: "Times New Roman";
+    font-size: 300%;
+    border:1px solid red;
+    padding: 20px;
+
+}
