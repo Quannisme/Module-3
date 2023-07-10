@@ -263,3 +263,16 @@ Dich_vu dv join Hop_dong hd on dv.Ma_dich_vu = hd.Ma_dich_vu where month(hd.Ngay
 group by dv.Ma_dich_vu;
 
 -- bai7
+
+-- jdbc
+create user 'test'@'localhost' identified by'123456';
+grant all privileges on *.* to'test'@'localhost'with grant option;
+flush privileges;
+create table users (
+ id  int(3) NOT NULL AUTO_INCREMENT,
+ name varchar(120) NOT NULL,
+ email varchar(220) NOT NULL,
+ country varchar(120),
+ PRIMARY KEY (id)
+);
+
