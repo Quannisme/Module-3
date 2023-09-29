@@ -128,15 +128,4 @@ public class UserReponsitoryImpl implements UserReponsitory{
         }
     }
 
-    @Override
-    public void sortByName(User user) {
-        try(Connection connection=DatabaseConnection.getConnection();
-             PreparedStatement statement=connection.prepareStatement(Constraints.SORT_BY_NAME);) {
-
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

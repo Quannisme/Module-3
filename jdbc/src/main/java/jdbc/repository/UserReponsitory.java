@@ -11,5 +11,4 @@ public interface UserReponsitory {
     void add(User user);
     void delete(int id);
     void update(User user);
-    void sortByName(User user);
 }

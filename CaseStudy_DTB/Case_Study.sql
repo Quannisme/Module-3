@@ -268,11 +268,4 @@ group by dv.Ma_dich_vu;
 create user 'test'@'localhost' identified by'123456';
 grant all privileges on *.* to'test'@'localhost'with grant option;
 flush privileges;
-create table users (
- id  int(3) NOT NULL AUTO_INCREMENT,
- name varchar(120) NOT NULL,
- email varchar(220) NOT NULL,
- country varchar(120),
- PRIMARY KEY (id)
-);
 
